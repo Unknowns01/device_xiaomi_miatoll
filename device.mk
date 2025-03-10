@@ -88,6 +88,13 @@ $(call soong_config_set,qtidisplay,gralloc_handle_has_reserved_size,true)
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
+# Dex2oat
+PRODUCT_VENDOR_PROPERTIES += \
+    dalvik.vm.dex2oat-cpu-set=4,5,6,7 \
+    dalvik.vm.dex2oat-threads=4 \
+    dalvik.vm.image-dex2oat-cpu-set=4,5,6,7 \
+    dalvik.vm.image-dex2oat-threads=4
+
 # Dex-preopt/ART
 ifeq ($(TARGET_BUILD_VARIANT),user)
 ART_BUILD_HOST_DEBUG := false
