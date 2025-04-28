@@ -64,6 +64,8 @@ $(call soong_config_set,camera,override_format_from_reserved,true)
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
 # Display
+$(call soong_config_set,qtidisplay,gralloc_handle_has_reserved_size,true)
+
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.4-service
 
