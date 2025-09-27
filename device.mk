@@ -185,6 +185,43 @@ $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/xiaomi/miuicamera-miatoll/MiuiCamera.mk)
 
+# Logging
+SPAMMY_LOG_TAGS := \
+    AiAiEcho \
+    AiAiTextClassifier \
+    AppLinksAsyncVerifierV2 \
+    BaseDepthController \
+    GraphicsEnvironment \
+    Diag_Lib \
+    CCodec \
+    CCodecBufferChannel \
+    CCodecConfig \
+    Codec2Client \
+    LazyLogger \
+    PackageCacher \
+    PackageSettings \
+    QtiLinkBandwidthEstimator-0 \
+    SDM \
+    SRE \
+    WifiHAL \
+    WifiService \
+    cnss-daemon \
+    CameraService \
+    ForegroundUtils \
+    sensors \
+    sensors-hal \
+    a2dp_offload \
+    bluetooth-a2dp \
+    BluetoothMetrics \
+    DisplayManagerService \
+    DisplayModeController \
+    FrameTracker
+
+ifneq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_VENDOR_PROPERTIES += \
+    $(foreach tag,$(SPAMMY_LOG_TAGS),log.tag.$(tag)=E)
+endif
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
