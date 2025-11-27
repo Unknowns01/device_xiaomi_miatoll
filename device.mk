@@ -448,6 +448,10 @@ PRODUCT_PACKAGES += \
 # Vibrator
 $(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
 
+# VSync
+PRODUCT_VENDOR_PROPERTIES += \
+    debug.cpurend.vsync=false
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
