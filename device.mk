@@ -125,6 +125,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FM2
 
+# GFX
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.config.avoid_gfx_accel=true
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl-qti \
