@@ -233,6 +233,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_performance_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_c2.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
+# Memory tagging
+PRODUCT_SYSTEM_PROPERTIES += \
+    arm64.memtag.process.system_server=off
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
