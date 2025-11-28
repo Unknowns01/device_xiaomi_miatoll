@@ -235,7 +235,7 @@ PRODUCT_COPY_FILES += \
 
 # Memory tagging
 PRODUCT_SYSTEM_PROPERTIES += \
-    arm64.memtag.process.system_server=off
+    persist.arm64.memtag.system_server=off
 
 # NFC
 PRODUCT_PACKAGES += \
