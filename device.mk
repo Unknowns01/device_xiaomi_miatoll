@@ -154,6 +154,9 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set_bool,livedisplay_sdm,enable_dm,false)
 
+# MiuiCamera
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera-miatoll/MiuiCamera.mk)
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
