@@ -113,7 +113,7 @@ BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
-ifeq ($(WITH_GMS),true)
+ifeq ($(ALPHA_BUILD_VARIANT),gapps)
 BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 209715200
 BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 104857600
 else
@@ -163,7 +163,7 @@ BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Sepolicy
-include device/lineage/sepolicy/libperfmgr/sepolicy.mk
+include device/alpha/sepolicy/libperfmgr/sepolicy.mk
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 include hardware/sony/timekeep/sepolicy/SEPolicy.mk
 include $(DEVICE_PATH)/sepolicy/SEPolicy-diag.mk
