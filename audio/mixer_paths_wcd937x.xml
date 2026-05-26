@@ -2830,6 +2830,9 @@
         <ctl name="SpkrRight BOOST Switch" value="1" />
         <ctl name="SpkrRight VISENSE Switch" value="1" />
         <ctl name="SpkrRight SWR DAC_Port Switch" value="1" />
+        <ctl name="EAR_RDAC Switch" value="1"/>
+        <ctl name="RDAC3_MUX" value="RX1"/>
+        <ctl name="RX_EAR Mode" value="ON"/>
     </path>
 
     <path name="speaker-mono">
