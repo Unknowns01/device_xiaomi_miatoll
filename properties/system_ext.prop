@@ -1,3 +1,6 @@
 # EGL
 ro.egl.blobcache.multifile=true
 ro.egl.blobcache.multifile_limit=33554432
+
+# Blur
+ro.surface_flinger.blur_scale=0.55
