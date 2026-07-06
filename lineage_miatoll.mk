@@ -15,7 +15,28 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from miatoll device
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
+# RisingOS-Flags
 TORCH_STR_SUPPORTED := true
+
+# Addons
+TARGET_HAS_UDFPS := false
+
+# Gms
+WITH_GMS := true
+TARGET_CORE_GMS := true
+TARGET_CORE_GMS_EXTRAS := true
+
+# Ship Pixel Launcher
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+
+# Lawnchair Prebuilt
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+
+# disable/enable blur support, default is false
+TARGET_ENABLE_BLUR := true
+
+# rising Maintainer
+RISING_MAINTAINER := ナマン
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
@@ -32,3 +53,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="miatoll_global-user 12 SKQ1.211019.001 V14.0.3.0.SJZMIXM release-keys" \
     BuildFingerprint=Redmi/miatoll_global/miatoll:12/RKQ1.211019.001/V14.0.3.0.SJZMIXM:user/release-keys
+    DeviceProduct=miatoll \
+    RisingMaintainer="ナマン" \
+    RisingChipset="Snapdragon 720G"
