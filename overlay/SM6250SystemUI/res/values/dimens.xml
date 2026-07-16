@@ -37,6 +37,6 @@
     <dimen name="ongoing_appops_dot_min_padding">15dp</dimen>
 
     <!-- Blur radius behind Notification Shade -->
-    <dimen name="max_shade_window_blur_radius">23.36dp</dimen>
+    <dimen name="max_shade_window_blur_radius">15dp</dimen>
 
 </resources>
