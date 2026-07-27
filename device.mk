@@ -126,8 +126,8 @@ PRODUCT_PACKAGES += \
     FM2
 
 # GFX
-PRODUCT_VENDOR_PROPERTIES += \
-    ro.config.avoid_gfx_accel=true
+#PRODUCT_VENDOR_PROPERTIES += \
+#    ro.config.avoid_gfx_accel=true
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -339,8 +339,8 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.lineage-libperfmgr \
-    android.hardware.power.stats@1.0-service.mock
+    android.hardware.power-service.lineage-libperfmgr
+    #android.hardware.power.stats@1.0-service.mock
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
@@ -435,7 +435,7 @@ PRODUCT_PACKAGES += \
     TimeKeep
 
 # UFFD GC
-PRODUCT_ENABLE_UFFD_GC := true
+PRODUCT_ENABLE_UFFD_GC := false
 
 # USB
 PRODUCT_PACKAGES += \
