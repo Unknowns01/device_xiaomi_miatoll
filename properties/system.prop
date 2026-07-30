@@ -75,3 +75,6 @@ persist.vendor.ims.disableQXDMLogs=1
 # WFD
 persist.debug.wfd.enable=1
 vendor.sys.video.disable.ubwc=1
+
+# Hwui
+debug.hwui.use_hint_manager=false
