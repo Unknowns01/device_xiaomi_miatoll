@@ -481,3 +481,6 @@ PRODUCT_PACKAGES += \
 
 # Inherit proprietary targets
 $(call inherit-product, vendor/xiaomi/miatoll/miatoll-vendor.mk)
+
+# Apply device-specific resource overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay

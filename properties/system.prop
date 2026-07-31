@@ -78,3 +78,18 @@ vendor.sys.video.disable.ubwc=1
 
 # Hwui
 debug.hwui.use_hint_manager=false
+ro.config.use_compaction=false
+persist.device_config.activity_manager_native_boot.use_compaction=false
+
+# Fix HardwareBuffer leaks and ImageReader starvation
+debug.hwui.renderer=skiagl
+debug.renderengine.backend=skiagl
+
+# Tell SurfaceFlinger that blurs are GPU-heavy so it optimizes/downsamples them
+ro.sf.blurs_are_expensive=1
+
+# Cap max SurfaceFlinger frame composition to prevent queue backups
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+
+# RenderEngine optimizations
+debug.hwui.use_buffer_age=false

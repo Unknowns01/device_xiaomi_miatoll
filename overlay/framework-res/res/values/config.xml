@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Force cross-window blurs on -->
+    <bool name="config_crossWindowBlurSupported">true</bool>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reduce the maximum blur radius for smoother rendering -->
+    <dimen name="max_window_blur_radius">30dp</dimen>
+    <dimen name="min_window_blur_radius">8dp</dimen>
+</resources>

@@ -232,6 +232,12 @@
     },
     {
       "PowerHint": "INTERACTION",
+      "Node": "GPUMinFreq",
+      "Duration": 200,
+      "Value": "565000000"
+    },
+    {
+      "PowerHint": "INTERACTION",
       "Node": "CPUBWHystTriggerCount",
       "Duration": 200,
       "Value": "0"
@@ -271,6 +277,18 @@
       "Node": "CPUBigClusterMinFreq",
       "Duration": 3500,
       "Value": "1900800"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "GPUMaxFreq",
+      "Duration": 3500,
+      "Value": "750000000"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "GPUMinFreq",
+      "Duration": 3500,
+      "Value": "650000000"
     },
     {
       "PowerHint": "LAUNCH",
