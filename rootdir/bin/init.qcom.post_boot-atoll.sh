@@ -102,7 +102,8 @@ echo 0 > /sys/devices/system/cpu/cpu6/core_ctl/enable
 # Setting b.L scheduler parameters
 # default sched up and down migrate values are 95 and 85
 echo 65 > /proc/sys/kernel/sched_downmigrate
-echo 71 > /proc/sys/kernel/sched_upmigrate
+echo 80 > /proc/sys/kernel/sched_upmigrate
+echo 0 > /proc/sys/kernel/sched_child_runs_first
 # default sched up and down migrate values are 100 and 95
 echo 85 > /proc/sys/kernel/sched_group_downmigrate
 echo 100 > /proc/sys/kernel/sched_group_upmigrate
@@ -130,7 +131,7 @@ echo -6 >  /sys/devices/system/cpu/cpu6/sched_load_boost
 echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
 echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
-echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
+echo "0:1324800 6:1267200" > /sys/module/cpu_boost/parameters/input_boost_freq
 echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
 
 # Enable bus-dcvs
@@ -210,7 +211,7 @@ do
 done
 
 # cpuset parameters
-echo 0-5 > /dev/cpuset/background/cpus
+echo 0-3 > /dev/cpuset/background/cpus
 echo 0-5 > /dev/cpuset/system-background/cpus
 
 # Turn off scheduler boost at the end
