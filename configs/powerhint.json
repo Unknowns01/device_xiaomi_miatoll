@@ -344,10 +344,5 @@
       "Duration": 0,
       "Value": "1"
     }
-    ],
-    "AdpfConfig": {
-    "TargetCpuTimePercent": 80,
-    "Heuristics": "POWER_HAL"
-  }
+  ]
 }
-
