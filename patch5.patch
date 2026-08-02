@@ -1,0 +1,18 @@
+--- a/device/xiaomi/miatoll/rootdir/etc/init.xiaomi.perf.rc
++++ b/device/xiaomi/miatoll/rootdir/etc/init.xiaomi.perf.rc
+@@ -108,9 +108,13 @@
+     write /sys/module/cpu_boost/parameters/powerkey_input_boost_ms 750
+ 
+     # Configure scheduler parameters
++    # Experimental: lowered from 85/95 (stock CAF default) to promote to
++    # a gold core a bit sooner; same 10-point hysteresis gap preserved.
++    # Test on its own — separate variable from everything else in this
++    # patch set, tune to taste / thermal headroom.
+     write /proc/sys/kernel/sched_child_runs_first 1
+-    write /proc/sys/kernel/sched_downmigrate 85
+-    write /proc/sys/kernel/sched_upmigrate 95
++    write /proc/sys/kernel/sched_downmigrate 80
++    write /proc/sys/kernel/sched_upmigrate 90
+ 
+     # Setup default schedtune values for foreground/top-app
+     write /dev/stune/schedtune.boost 0

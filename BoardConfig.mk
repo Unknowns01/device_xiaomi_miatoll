@@ -77,7 +77,12 @@ BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=qcom
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom
 BOARD_KERNEL_CMDLINE += androidboot.memcg=1
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3
-BOARD_KERNEL_CMDLINE += cgroup_disable=pressure
+# Removed: cgroup_disable=pressure — this turned off PSI (/proc/pressure/*)
+# entirely. Modern lmkd + the cached-app freezer want PSI. Harmless if your
+# kernel defconfig lacks CONFIG_PSI=y (nothing to disable then), but if
+# PSI *is* compiled in and was just switched off here, this re-enables it.
+# Verify after rebuild: `adb shell cat /proc/pressure/memory` should return
+# real numbers, not an error.
 BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem,nosocket
 BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200n8
 BOARD_KERNEL_CMDLINE += earlycon=msm_geni_serial,0xa88000

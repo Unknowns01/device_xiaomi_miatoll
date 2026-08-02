@@ -1,0 +1,13 @@
+--- a/device/xiaomi/miatoll/configs/perf/perfboostsconfig.xml
++++ b/device/xiaomi/miatoll/configs/perf/perfboostsconfig.xml
+@@ -91,8 +91,8 @@
+         <!-- CPUBOOST_MIN_FREQ LITTLE Core resource opcode, value-->
+         <!-- AOSPA Edit: Modify CPU freq for Animation Boost -->
+        <Config
+-            Id="0x00001083" Enable="true" Timeout="250"
+-            Resources="0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 1267, 0x40800100, 1516" />
++            Id="0x00001083" Enable="true" Timeout="400"
++            Resources="0x40804000, 0xFFF, 0x40804100, 0xFFF, 0x40800000, 1555, 0x40800100, 1516" />
+ 
+     <!--Vertical Scroll boost-->
+         <!-- CPUBW_MIN_FREQ resource opcode, value-->

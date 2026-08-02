@@ -1,0 +1,31 @@
+--- a/device/xiaomi/miatoll/device.mk
++++ b/device/xiaomi/miatoll/device.mk
+@@ -126,8 +126,12 @@
+     FM2
+ 
+ # GFX
+-PRODUCT_VENDOR_PROPERTIES += \
+-    ro.config.avoid_gfx_accel=true
++# Removed ro.config.avoid_gfx_accel=true: this is a legacy property that
++# historically could push apps toward software (non-GPU) rendering by
++# default. Couldn't confirm whether current AOSP still reads it — grep
++# your frameworks/base tree for the string before assuming either way.
++# Zero-risk to drop: if it's dead code this changes nothing; if it's
++# still honored, this may directly help animation smoothness.
+ 
+ # GPS
+ PRODUCT_PACKAGES += \
+@@ -435,7 +439,12 @@
+     TimeKeep
+ 
+ # UFFD GC
+-PRODUCT_ENABLE_UFFD_GC := true
++# Disabled for testing: logcat shows "userfaultfd: MOVE ioctl seems
++# unsupported" during app launch — this msm-4.19 kernel likely lacks the
++# UFFDIO_MOVE support Android 15's CMC collector wants. Falls back to the
++# proven Concurrent Copying collector instead. Re-enable only if you
++# backport proper kernel uffd-move support.
++PRODUCT_ENABLE_UFFD_GC := false
+ 
+ # USB
+ PRODUCT_PACKAGES += \
